@@ -4,8 +4,6 @@
  * 
  * Secure finished module slot for Fourier Analysis:
  * - Time-Domain to Frequency-Domain Continuous & Discrete Transform representation
- * - KaTeX analytical formulation & LTI frequency response
- * - Dedicated slot for single-file teammate extensions
  */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
