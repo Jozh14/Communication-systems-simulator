@@ -2,7 +2,7 @@
  * Module 2: Fourier Analysis
  * Filename: Module2_Fourier.jsx
  * 
- * Secure finished module slot for Fourier Analysis:
+ finished module slot for Fourier Analysis:
  * - Time-Domain to Frequency-Domain Continuous & Discrete Transform representation
  */
 
