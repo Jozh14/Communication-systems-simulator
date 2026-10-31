@@ -4,8 +4,6 @@
  * 
  * Secure finished module slot for Fourier Analysis:
  * - Time-Domain to Frequency-Domain Continuous & Discrete Transform representation
- * - Interactive Fourier Series Harmonic Synthesizer (Square, Triangle, Sawtooth, Pulse)
- * - Magnitude Spectrum Bar Chart (|c_k|)
  * - KaTeX analytical formulation & LTI frequency response
  * - Dedicated slot for single-file teammate extensions
  */
