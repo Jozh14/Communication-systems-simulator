@@ -406,6 +406,23 @@ export default function Module2_Fourier({
                     <span>N=1 (Fundamental)</span>
                     <span>N=21</span>
                   </div>
+                  <div className="flex items-center gap-1.5 mt-2">
+                    <span className="text-[10px] font-mono text-[#8A8882]">Quick:</span>
+                    {[1, 3, 7, 15, 21].map((n) => (
+                      <button
+                        key={n}
+                        type="button"
+                        onClick={() => setNumHarmonics(n)}
+                        className={`px-1.5 py-0.5 text-[10px] font-mono rounded border transition-colors ${
+                          numHarmonics === n
+                            ? 'bg-[#C85A32] text-white border-[#C85A32]'
+                            : 'bg-white text-[#585651] border-[#E6E4DD] hover:bg-[#F3F2EC]'
+                        }`}
+                      >
+                        {n}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Fundamental Frequency */}
