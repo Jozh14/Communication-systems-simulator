@@ -3,7 +3,8 @@
  * Filename: Module2_Fourier.jsx
  * 
  * Secure finished module slot for Fourier Analysis:
-
+ * - Time-Domain to Frequency-Domain Continuous & Discrete Transform representation
+ */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Layers, BookOpen, SlidersHorizontal, Info, Activity, Sparkles, Code2, Play, Pause, RotateCcw } from 'lucide-react';
