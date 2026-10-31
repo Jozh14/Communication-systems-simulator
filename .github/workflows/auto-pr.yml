@@ -8,11 +8,25 @@ on:
 jobs:
   create-pr:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Create Pull Request
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the name of the branch that was just pushed to
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          
+          # Check if a PR already exists for this branch to avoid duplicates
+          EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq 'length')
+          
+          if [ "$EXISTING_PR" -eq 0 ]; then
+            gh pr create --base main --head "$BRANCH_NAME" --title "Auto-PR from $BRANCH_NAME" --body "Automatically created pull request from recent push by teammate."
+          else
+            echo "Pull request already exists for $BRANCH_NAME"
+          fi
+        shell: bash
